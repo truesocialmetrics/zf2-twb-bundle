@@ -9,9 +9,9 @@ namespace TwbBundleTest\View\Helper;
 
 use TwbBundle\View\Helper\TwbBundleFontAwesome;
 use TwbBundleTest\Bootstrap;
-use Zend\View\Renderer\PhpRenderer;
+use Laminas\View\Renderer\PhpRenderer;
 
-class TwbBundleFontAwesomeTest extends \PHPUnit_Framework_TestCase
+class TwbBundleFontAwesomeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var TwbBundleFontAwesome
@@ -19,9 +19,9 @@ class TwbBundleFontAwesomeTest extends \PHPUnit_Framework_TestCase
     protected $fontAwesomeHelper;
 
     /**
-     * @see \PHPUnit_Framework_TestCase::setUp()
+     * @see \PHPUnit\Framework\TestCase::setUp() : void
      */
-    public function setUp() {
+    public function setUp() : void {
         $oViewHelperPluginManager = Bootstrap::getServiceManager()
             ->get('ViewHelperManager');
         $oRenderer = new PhpRenderer();

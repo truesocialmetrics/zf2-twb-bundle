@@ -1,17 +1,17 @@
 <?php
 namespace TwbBundleTest\View\Helper;
-class TwbBundleAlertTest extends \PHPUnit_Framework_TestCase{
+class TwbBundleAlertTest extends \PHPUnit\Framework\TestCase{
 	/**
 	 * @var \TwbBundle\View\Helper\TwbBundleAlert
 	 */
 	protected $alertHelper;
 
 	/**
-	 * @see \PHPUnit_Framework_TestCase::setUp()
+	 * @see \PHPUnit\Framework\TestCase::setUp() : void
 	 */
-	public function setUp(){
+	public function setUp() : void{
 		$oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-		$oRenderer = new \Zend\View\Renderer\PhpRenderer();
+		$oRenderer = new \Laminas\View\Renderer\PhpRenderer();
 		$this->alertHelper = $oViewHelperPluginManager->get('alert')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
 	}
 

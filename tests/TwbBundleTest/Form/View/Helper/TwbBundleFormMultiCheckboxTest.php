@@ -2,7 +2,7 @@
 
 namespace TwbBundleTest\Form\View\Helper;
 
-class TwbBundleFormMultiCheckboxTest extends \PHPUnit_Framework_TestCase {
+class TwbBundleFormMultiCheckboxTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var \TwbBundle\Form\View\Helper\TwbBundleFormMultiCheckbox
@@ -10,16 +10,16 @@ class TwbBundleFormMultiCheckboxTest extends \PHPUnit_Framework_TestCase {
     protected $formMultiCheckboxHelper;
 
     /**
-     * @see \PHPUnit_Framework_TestCase::setUp()
+     * @see \PHPUnit\Framework\TestCase::setUp() : void
      */
-    public function setUp() {
+    public function setUp() : void {
         $oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-        $oRenderer = new \Zend\View\Renderer\PhpRenderer();
+        $oRenderer = new \Laminas\View\Renderer\PhpRenderer();
         $this->formMultiCheckboxHelper = $oViewHelperPluginManager->get('formMultiCheckbox')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
     }
 
     public function testRenderWithNoInline() {
-        $oElement = new \Zend\Form\Element\MultiCheckbox('test-element', array('inline' => false, 'value_options' => array('test-option')));
+        $oElement = new \Laminas\Form\Element\MultiCheckbox('test-element', array('inline' => false, 'value_options' => array('test-option')));
         $this->formMultiCheckboxHelper->render($oElement);
         $this->assertEquals(array('class' => 'checkbox'), $oElement->getLabelAttributes());
     }

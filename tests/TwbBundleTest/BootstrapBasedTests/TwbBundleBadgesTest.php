@@ -4,7 +4,7 @@ namespace TwbBundleTest;
  * Test badges rendering
  * Based on http://getbootstrap.com/components/#badges
  */
-class TwbBundleBadgesTest extends \PHPUnit_Framework_TestCase{
+class TwbBundleBadgesTest extends \PHPUnit\Framework\TestCase{
 	/**
 	 * @var string
 	 */
@@ -16,12 +16,12 @@ class TwbBundleBadgesTest extends \PHPUnit_Framework_TestCase{
 	protected $badgeHelper;
 
 	/**
-	 * @see \PHPUnit_Framework_TestCase::setUp()
+	 * @see \PHPUnit\Framework\TestCase::setUp() : void
 	 */
-	public function setUp(){
+	public function setUp() : void{
 		$this->expectedPath = __DIR__.DIRECTORY_SEPARATOR.'../../_files/expected-badges'.DIRECTORY_SEPARATOR;
 		$oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-		$oRenderer = new \Zend\View\Renderer\PhpRenderer();
+		$oRenderer = new \Laminas\View\Renderer\PhpRenderer();
 		$this->badgeHelper = $oViewHelperPluginManager->get('badge')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
 	}
 

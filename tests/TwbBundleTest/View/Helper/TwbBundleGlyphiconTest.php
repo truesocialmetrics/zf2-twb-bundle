@@ -2,7 +2,7 @@
 
 namespace TwbBundleTest\View\Helper;
 
-class TwbBundleGlyphiconTest extends \PHPUnit_Framework_TestCase {
+class TwbBundleGlyphiconTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var \TwbBundle\View\Helper\TwbBundleGlyphicon
@@ -10,11 +10,11 @@ class TwbBundleGlyphiconTest extends \PHPUnit_Framework_TestCase {
     protected $glyphiconHelper;
 
     /**
-     * @see \PHPUnit_Framework_TestCase::setUp()
+     * @see \PHPUnit\Framework\TestCase::setUp() : void
      */
-    public function setUp() {
+    public function setUp() : void {
         $oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-        $oRenderer = new \Zend\View\Renderer\PhpRenderer();
+        $oRenderer = new \Laminas\View\Renderer\PhpRenderer();
         $this->glyphiconHelper = $oViewHelperPluginManager->get('glyphicon')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
     }
 

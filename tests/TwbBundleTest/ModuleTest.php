@@ -1,19 +1,19 @@
 <?php
 namespace TwbBundleTest;
-class ModuleTest extends \PHPUnit_Framework_TestCase{
+class ModuleTest extends \PHPUnit\Framework\TestCase{
 
 	/**
 	 * @var \TwbBundle\Module
 	 */
 	protected $module;
 
-	public function setUp(){
+	public function setUp() : void{
 		$this->module = new \TwbBundle\Module();
 	}
 
 	public function testGetAutoloaderConfig(){
 		$this->assertEquals(
-			array('Zend\Loader\ClassMapAutoloader' => array(realpath(getcwd().'/../autoload_classmap.php'))),
+			array('Laminas\Loader\ClassMapAutoloader' => array(realpath(getcwd().'/../autoload_classmap.php'))),
 			$this->module->getAutoloaderConfig()
 		);
 	}

@@ -2,7 +2,7 @@
 
 namespace TwbBundle\Options;
 
-use Zend\Stdlib\AbstractOptions;
+use Laminas\Stdlib\AbstractOptions;
 
 /**
  * Hold options for TwbBundle module
@@ -10,14 +10,14 @@ use Zend\Stdlib\AbstractOptions;
 class ModuleOptions extends AbstractOptions
 {
     protected $ignoredViewHelpers;
-    
+
     protected $classMap;
 
     protected $typeMap;
-    
+
     /**
      * Constructor
-     * 
+     *
      * @param array|\Traversable|null $options
      */
     public function __construct($options = null)
@@ -33,7 +33,7 @@ class ModuleOptions extends AbstractOptions
     {
         $this->ignoredViewHelpers = $ignoredViewHelpers;
     }
-    
+
     public function getClassMap()
     {
         return $this->classMap;
@@ -50,5 +50,5 @@ class ModuleOptions extends AbstractOptions
     public function setTypeMap($typeMap)
     {
         $this->typeMap = $typeMap;
-    }    
+    }
 }

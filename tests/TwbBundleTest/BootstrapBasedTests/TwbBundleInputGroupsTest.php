@@ -6,7 +6,7 @@ namespace TwbBundleTest;
  * Test input groups rendering
  * Based on http://getbootstrap.com/components/#input-groups
  */
-class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
+class TwbBundleInputGroupsTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var string
@@ -19,12 +19,12 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
     protected $formElementHelper;
 
     /**
-     * @see \PHPUnit_Framework_TestCase::setUp()
+     * @see \PHPUnit\Framework\TestCase::setUp() : void
      */
-    public function setUp() {
+    public function setUp() : void {
         $this->expectedPath = __DIR__ . DIRECTORY_SEPARATOR . '../../_files/expected-input-groups' . DIRECTORY_SEPARATOR;
         $oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-        $oRenderer = new \Zend\View\Renderer\PhpRenderer();
+        $oRenderer = new \Laminas\View\Renderer\PhpRenderer();
         $this->formElementHelper = $oViewHelperPluginManager->get('formElement')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
     }
 
@@ -34,14 +34,14 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
     public function testBasicExample() {
         $sContent = '';
 
-        $oInput = new \Zend\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
+        $oInput = new \Laminas\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
         $oInput->setAttribute('placeholder', 'Username');
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
-        $oInput = new \Zend\Form\Element\Text('input-append', array('add-on-append' => '.00'));
+        $oInput = new \Laminas\Form\Element\Text('input-append', array('add-on-append' => '.00'));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
-        $oInput = new \Zend\Form\Element\Text('input-append-prepend', array('add-on-prepend' => '$', 'add-on-append' => '.00'));
+        $oInput = new \Laminas\Form\Element\Text('input-append-prepend', array('add-on-prepend' => '$', 'add-on-append' => '.00'));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Test content
@@ -55,17 +55,17 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
         $sContent = '';
 
         //Large
-        $oInput = new \Zend\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
+        $oInput = new \Laminas\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
         $oInput->setAttributes(array('placeholder' => 'Username', 'class' => 'input-lg'));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Default
-        $oInput = new \Zend\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
+        $oInput = new \Laminas\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
         $oInput->setAttribute('placeholder', 'Username');
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Small
-        $oInput = new \Zend\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
+        $oInput = new \Laminas\Form\Element\Text('input-prepend', array('add-on-prepend' => '@'));
         $oInput->setAttributes(array('placeholder' => 'Username', 'class' => 'input-sm'));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
@@ -80,11 +80,11 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
         $sContent = '';
 
         //Checkbox
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-prepend' => new \Zend\Form\Element\Checkbox('checkbox')));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-prepend' => new \Laminas\Form\Element\Checkbox('checkbox')));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Radio
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-prepend' => new \Zend\Form\Element\Radio('radio', array('value_options' => array(1 => '')))));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-prepend' => new \Laminas\Form\Element\Radio('radio', array('value_options' => array(1 => '')))));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Test content
@@ -98,11 +98,11 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
         $sContent = '';
 
         //Prepend
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-prepend' => new \Zend\Form\Element\Button('prepend-button', array('label' => 'Go!'))));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-prepend' => new \Laminas\Form\Element\Button('prepend-button', array('label' => 'Go!'))));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Append
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-append' => new \Zend\Form\Element\Button('append-button', array('label' => 'Go!'))));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-append' => new \Laminas\Form\Element\Button('append-button', array('label' => 'Go!'))));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Test content
@@ -124,11 +124,11 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
         $sContent = '';
 
         //Prepend
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-prepend' => new \Zend\Form\Element\Button('prepend-button', $aButtonOptions)));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-prepend' => new \Laminas\Form\Element\Button('prepend-button', $aButtonOptions)));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Append
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-append' => new \Zend\Form\Element\Button('append-button', $aButtonOptions)));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-append' => new \Laminas\Form\Element\Button('append-button', $aButtonOptions)));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Test content
@@ -151,26 +151,14 @@ class TwbBundleInputGroupsTest extends \PHPUnit_Framework_TestCase {
         $sContent = '';
 
         //Prepend
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-prepend' => new \Zend\Form\Element\Button('prepend-button', $aButtonOptions)));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-prepend' => new \Laminas\Form\Element\Button('prepend-button', $aButtonOptions)));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Append
-        $oInput = new \Zend\Form\Element\Text('input-username', array('add-on-append' => new \Zend\Form\Element\Button('append-button', $aButtonOptions)));
+        $oInput = new \Laminas\Form\Element\Text('input-username', array('add-on-append' => new \Laminas\Form\Element\Button('append-button', $aButtonOptions)));
         $sContent .= $this->formElementHelper->__invoke($oInput) . "\n";
 
         //Test content
         $this->assertStringEqualsFile($this->expectedPath . 'input-groups-buttons-segmented.phtml', $sContent);
     }
-
-    /**
-     * @param string $sExpectedFile
-     * @param string $sActualString
-     * @param string $sMessage
-     * @param boolean $bCanonicalize
-     * @param boolean $bIgnoreCase
-     */
-    public static function assertStringEqualsFile($sExpectedFile, $sActualString, $sMessage = '', $bCanonicalize = false, $bIgnoreCase = false) {
-        return parent::assertStringEqualsFile($sExpectedFile, $sActualString, $sMessage, $bCanonicalize, $bIgnoreCase);
-    }
-
 }

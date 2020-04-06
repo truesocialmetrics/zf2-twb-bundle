@@ -4,7 +4,7 @@ namespace TwbBundleTest;
  * Test labels rendering
  * Based on http://getbootstrap.com/components/#labels
  */
-class TwbBundleLabelsTest extends \PHPUnit_Framework_TestCase{
+class TwbBundleLabelsTest extends \PHPUnit\Framework\TestCase{
 	/**
 	 * @var string
 	 */
@@ -16,12 +16,12 @@ class TwbBundleLabelsTest extends \PHPUnit_Framework_TestCase{
 	protected $labelHelper;
 
 	/**
-	 * @see \PHPUnit_Framework_TestCase::setUp()
+	 * @see \PHPUnit\Framework\TestCase::setUp() : void
 	 */
-	public function setUp(){
+	public function setUp() : void{
 		$this->expectedPath = __DIR__.DIRECTORY_SEPARATOR.'../../_files/expected-labels'.DIRECTORY_SEPARATOR;
 		$oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-		$oRenderer = new \Zend\View\Renderer\PhpRenderer();
+		$oRenderer = new \Laminas\View\Renderer\PhpRenderer();
 		$this->labelHelper = $oViewHelperPluginManager->get('label')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
 	}
 

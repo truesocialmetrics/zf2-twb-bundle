@@ -4,7 +4,7 @@ namespace TwbBundleTest;
  * Test badges rendering
  * Based on http://getbootstrap.com/components/#alerts
  */
-class TwbBundleAlertsTest extends \PHPUnit_Framework_TestCase{
+class TwbBundleAlertsTest extends \PHPUnit\Framework\TestCase{
 	/**
 	 * @var string
 	 */
@@ -16,12 +16,12 @@ class TwbBundleAlertsTest extends \PHPUnit_Framework_TestCase{
 	protected $alertHelper;
 
 	/**
-	 * @see \PHPUnit_Framework_TestCase::setUp()
+	 * @see \PHPUnit\Framework\TestCase::setUp() : void
 	 */
-	public function setUp(){
+	public function setUp() : void{
 		$this->expectedPath = __DIR__.DIRECTORY_SEPARATOR.'../../_files/expected-alerts'.DIRECTORY_SEPARATOR;
 		$oViewHelperPluginManager = \TwbBundleTest\Bootstrap::getServiceManager()->get('ViewHelperManager');
-		$oRenderer = new \Zend\View\Renderer\PhpRenderer();
+		$oRenderer = new \Laminas\View\Renderer\PhpRenderer();
 		$this->alertHelper = $oViewHelperPluginManager->get('alert')->setView($oRenderer->setHelperPluginManager($oViewHelperPluginManager));
 	}
 
