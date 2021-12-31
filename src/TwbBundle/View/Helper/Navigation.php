@@ -3,9 +3,9 @@
 namespace TwbBundle\View\Helper;
 
 
-use Laminas\View\Helper\Navigation as ZendNavigationHelper;
+use Laminas\View\Helper\Navigation as LaminasNavigationHelper;
 
-class Navigation extends ZendNavigationHelper
+class Navigation extends LaminasNavigationHelper
 {
     /**
      * Retrieve plugin loader for navigation helpers

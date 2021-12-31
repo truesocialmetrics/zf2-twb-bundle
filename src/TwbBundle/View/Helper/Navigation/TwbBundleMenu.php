@@ -3,11 +3,11 @@
 namespace TwbBundle\View\Helper\Navigation;
 
 use RecursiveIteratorIterator;
-use Laminas\View\Helper\Navigation\Menu as ZendMenuHelper;
+use Laminas\View\Helper\Navigation\Menu as LaminasMenuHelper;
 use Laminas\Navigation\AbstractContainer;
 use Laminas\Navigation\Page\AbstractPage;
 
-class TwbBundleMenu extends ZendMenuHelper
+class TwbBundleMenu extends LaminasMenuHelper
 {
     /**
      * CSS class to use for the ul element
