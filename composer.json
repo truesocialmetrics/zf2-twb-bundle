@@ -26,8 +26,6 @@
         "laminas/laminas-escaper": "*",
         "laminas/laminas-form": "*",
         "laminas/laminas-i18n": "*",
-        "laminas/laminas-loader": "*",
-        "laminas/laminas-log": "*",
         "laminas/laminas-modulemanager": "*",
         "laminas/laminas-mvc": "*",
         "laminas/laminas-serializer": "*",
