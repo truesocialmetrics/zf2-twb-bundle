@@ -28,7 +28,6 @@
         "laminas/laminas-i18n": "*",
         "laminas/laminas-modulemanager": "*",
         "laminas/laminas-mvc": "*",
-        "laminas/laminas-serializer": "*",
         "laminas/laminas-servicemanager": "*",
         "laminas/laminas-stdlib": "*",
         "laminas/laminas-view": "*",
