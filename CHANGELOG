@@ -2,6 +2,9 @@
 VERSION 4  FIXED TYPES
 ======================
 
+   Version 4.1 - remove laminas-serializer dependency
+      27/11/2024 23:48  4.1.0  initial release
+
    Version 4.0 - fixed types
       31/12/2021 16:28  4.0.3  migrated Zend to Laminas
       14/06/2021 19:11  4.0.2  string return types for view helpers
